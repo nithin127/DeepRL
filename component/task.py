@@ -48,6 +48,16 @@ class CartPole(BasicTask):
         self.env = gym.make(self.name)
         self.env._max_episode_steps = sys.maxsize
 
+class DuckieSimpleSim(BasicTask):
+    import gym_duckietown
+    name = 'Duckie-SimpleSim-v0'
+    success_threshold = 195
+
+    def __init__(self):
+        BasicTask.__init__(self)
+        self.env = gym.make(self.name)
+        self.env._max_episode_steps = sys.maxsize
+
 class LunarLander(BasicTask):
     name = 'LunarLander-v2'
     success_threshold = 200
